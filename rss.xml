@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 26 May 2021 21:42:45 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 26 May 2021 22:52:40 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://golorcsh.github.io/rss.xml" />
         
@@ -334,17 +334,38 @@ exit
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description>&lt;h2 id=&#34;一-hugo安装&#34;&gt;一. Hugo安装&lt;/h2&gt;
+                    <description>&lt;h2 id=&#34;hugo安装&#34;&gt;Hugo安装&lt;/h2&gt;
 &lt;h3 id=&#34;windows平台安装&#34;&gt;windows平台安装&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;进入网址&lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;Hugo Github下载&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;下载32或64位hugo，解压后存放到任意位置，然后将该路径添加到系统环境变量中&lt;code&gt;$PATH&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;二-hugo使用&#34;&gt;二. hugo使用&lt;/h2&gt;
+&lt;h2 id=&#34;hugo使用&#34;&gt;hugo使用&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;在&lt;code&gt;cmd&lt;/code&gt;中使用命令&lt;code&gt;hugo new site projectname&lt;/code&gt;,创建项目&lt;/li&gt;
 &lt;li&gt;进入项目目录，然后到&lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo官网&lt;/a&gt; 下载任意主题&lt;/li&gt;
 &lt;li&gt;使用命令行工具进入项目目录中输入&lt;code&gt;hugo server -t theme-name -D&lt;/code&gt;，本地运行项目&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;hugo部署到github-page&#34;&gt;hugo部署到github page&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;首先在github中创建一个新的仓库，仓库命名为&lt;code&gt;golorcsh.github.io&lt;/code&gt;，其中&lt;code&gt;golorcsh&lt;/code&gt;为用户名，请替换成自己的用户名&lt;/li&gt;
+&lt;li&gt;在项目的根目录中使用命令:&lt;code&gt;hugo --theme=meme --baseUrl=&amp;quot;https://golorcsh.github.io/&amp;quot; -D&lt;/code&gt;。若已在hugo的配置文件以及配置主题以及仓库地址可以使用命令：&lt;code&gt;hugo -D&lt;/code&gt;。输入命令后会在项目根目录中生成一个&lt;strong&gt;public&lt;/strong&gt;文件夹。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其中&lt;code&gt;meme&lt;/code&gt;为博客应用主题，&lt;code&gt;https://golorcsh.github.io/&lt;/code&gt; 为hugo博客配置的仓库地址，&lt;code&gt;-D&lt;/code&gt;选项为&lt;code&gt;--buildDrafts&lt;/code&gt;的缩写，用于生成public文件加。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;进入&lt;strong&gt;public&lt;/strong&gt;文件夹中，使用如下命令创建本地git仓库，以及将public文件夹推送到github中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;git init #初始化本地仓库
+git remote add origin https://github.com/Golorcsh/Golorcsh.github.io #关联github仓库
+git add . #将文件添加到暂存区
+git commit -m &amp;quot;frist commit&amp;quot; #将暂存区内容添加到仓库中 
+git push -f origin master #将文件推到github仓库中，输入命令后需要添加用户名及密码
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;最后在浏览器中输入&lt;code&gt;golorcsh.github.io&lt;/code&gt;链接，访问hugo博客&lt;/li&gt;
 &lt;/ol&gt;
 </description>
                 
